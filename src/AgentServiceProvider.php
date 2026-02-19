@@ -1,6 +1,6 @@
 <?php
 
-namespace Jenssegers\Agent;
+namespace cuteminded\Agent;
 
 use Illuminate\Support\ServiceProvider;
 
