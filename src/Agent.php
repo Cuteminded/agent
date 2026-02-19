@@ -29,8 +29,8 @@ class Agent extends MobileDetect
      */
     protected static array $additionalOperatingSystems = [
         'Windows' => 'Windows',
-        'Windows NT' => 'Windows NT',
-        'OS X' => 'Mac OS X',
+        'Windows' => 'Windows NT',
+        'macOS' => 'Mac OS X',
         'Debian' => 'Debian',
         'Ubuntu' => 'Ubuntu',
         'Macintosh' => 'PPC',
@@ -66,8 +66,8 @@ class Agent extends MobileDetect
     protected static array $additionalProperties = [
         // Operating systems
         'Windows' => 'Windows NT [VER]',
-        'Windows NT' => 'Windows NT [VER]',
-        'OS X' => 'OS X [VER]',
+        'Windows' => 'Windows NT [VER]',
+        'macOS' => 'Mac OS X [VER]',
         'BlackBerryOS' => ['BlackBerry[\w]+/[VER]', 'BlackBerry.*Version/[VER]', 'Version/[VER]'],
         'AndroidOS' => 'Android [VER]',
         'ChromeOS' => 'CrOS x86_64 [VER]',
