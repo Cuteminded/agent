@@ -249,6 +249,22 @@ class Agent extends MobileDetect
     }
 
     /**
+     * Use only mobile-specific rules when evaluating generic mobile detection to avoid
+     * desktop browsers/OS entries from the extended rule set triggering a match.
+     */
+    protected function matchUserAgentWithFirstFoundMatchingRule(): bool
+    {
+        $mobileRules = static::mergeRules(
+            parent::getPhoneDevices(),
+            parent::getTabletDevices(),
+            parent::getOperatingSystems(),
+            parent::getBrowsers()
+        );
+
+        return (bool) $this->findDetectionRulesAgainstUA($mobileRules);
+    }
+
+    /**
      * Get the browser name.
      * @param  string|null $userAgent
      * @return string|false
