@@ -11,9 +11,9 @@ class Agent extends MobileDetect
     /**
      * Version type constants (matching parent class)
      */
-    protected const VERSION_TYPE_STRING = 'text';
-    protected const VERSION_TYPE_FLOAT = 'float';
-    protected const VERSION_REGEX = '([\w._\+]+)';
+    public const VERSION_TYPE_STRING = 'text';
+    public const VERSION_TYPE_FLOAT = 'float';
+    public const VERSION_REGEX = '([\w._\+]+)';
 
     /**
      * List of desktop devices.
@@ -56,6 +56,18 @@ class Agent extends MobileDetect
         'Netscape' => 'Netscape',
         'Mozilla' => 'Mozilla',
         'WeChat'  => 'MicroMessenger',
+    ];
+
+    /**
+     * Override names returned by crawler detection.
+     *
+     * @var array<string, string>
+     */
+    protected static array $additionalRobotNames = [
+        'PlayStore-Google' => 'PlayStore',
+        'ChatGPT-User' => 'Chatgpt',
+        'GPTBot' => 'Chatgpt',
+        'ClaudeBot' => 'Claude',
     ];
 
     /**
@@ -333,7 +345,13 @@ class Agent extends MobileDetect
     {
         $ua = $userAgent ?? $this->getUserAgent();
         if ($this->getCrawlerDetect()->isCrawler($ua)) {
-            return ucfirst($this->getCrawlerDetect()->getMatches());
+            $robotName = ucfirst($this->getCrawlerDetect()->getMatches());
+
+            if (isset(static::$additionalRobotNames[$robotName])) {
+                return static::$additionalRobotNames[$robotName];
+            }
+
+            return $robotName;
         }
 
         return false;
