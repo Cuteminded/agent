@@ -50,8 +50,8 @@ class AgentTest extends TestCase
         'Mozilla/5.0 (compatible; PetalBot; +https://webmaster.petalsearch.com/site/petalbot)' => 'PetalBot',
         'Mozilla/5.0 (compatible; Discordbot/2.0; +https://discordapp.com)' => 'Discordbot',
         'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)' => 'Claude',
-        'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot)' => 'Chatgpt',
-        'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.3; +https://openai.com/gptbot)' => 'Chatgpt',
+        'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot' => 'Chatgpt',
+        'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.3; +https://openai.com/gptbot' => 'Chatgpt',
     ];
 
     private $mobileDevices = [
