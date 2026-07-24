@@ -173,7 +173,7 @@ $version = $agent->version($platform);
 
 ## License
 
-Laravel User Agent is licensed under [The MIT License (MIT)](LICENSE).
+Laravel User Agent is licensed under [The MIT License (MIT)](LICENSE.md).
 
 ## Security contact information
 
